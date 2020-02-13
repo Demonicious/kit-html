@@ -1,0 +1,277 @@
+@import '../../kit-core/mixins';
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/*  "APP" STYLES */
+/* Styles related to widgets example page, do not include this to your project */
+
+.kit__header {
+  &__container {
+    background: lighten($gray-1, 4%);
+    margin: 0 auto rem(40);
+    border-bottom: 1px solid $border;
+  }
+
+  &__switch {
+    cursor: pointer;
+    position: fixed;
+    z-index: 1000;
+    right: 0;
+    top: rem(100);
+    border-radius: 5px 0 0 5px;
+    background: $dark-gray-4;
+    padding: rem(10) rem(15) rem(8);
+    color: $dark-gray-1;
+    font-size: rem(21);
+    i.on {
+      display: inline;
+    }
+    i.off {
+      display: none;
+    }
+  }
+
+  &__color {
+    cursor: pointer;
+    position: fixed;
+    z-index: 1000;
+    right: 0;
+    top: rem(160);
+    border-radius: 5px 0 0 5px;
+    background: $dark-gray-4;
+    padding: rem(10) rem(15) rem(8);
+    color: $dark-gray-1;
+    font-size: rem(21);
+
+    button {
+      padding: 0;
+      display: inline-block;
+      border-radius: 20px;
+      border: 2px solid $border;
+      position: absolute;
+      z-index: 1001;
+      height: 26px;
+      width: 26px;
+      top: -10px;
+      left: -10px;
+      font-size: 21px;
+      line-height: 26px;
+      outline: none;
+
+      i {
+        color: $gray-6;
+      }
+
+      &:hover {
+        background: $gray-3;
+      }
+    }
+
+    &.reset {
+      button {
+        display: none;
+      }
+    }
+
+    input {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+
+  &__button {
+    position: relative;
+    padding: rem(7) rem(26) rem(6) rem(61);
+    font-size: rem(20);
+    font-weight: normal;
+    text-align: left;
+    line-height: 1.2;
+    span {
+      font-weight: normal;
+      font-size: rem(14);
+      opacity: 0.6;
+      display: block;
+    }
+    i {
+      position: absolute;
+      left: rem(15);
+      top: rem(14);
+      font-size: rem(28);
+    }
+  }
+  &__topbar {
+    min-height: rem(60);
+    padding: rem(20) 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  &__logo {
+    width: auto;
+    display: flex;
+    align-items: center;
+    line-height: 0.9;
+    white-space: nowrap;
+    &__kit {
+      display: block;
+      height: rem(32);
+      border-radius: 6px;
+      background: $black;
+      line-height: rem(34);
+      padding: 0 rem(13);
+      color: $white;
+      margin-left: rem(10);
+      font-size: rem(22);
+      font-weight: 800;
+    }
+    &__pro {
+      display: block;
+      height: rem(32);
+      border-radius: 6px;
+      border: 3px solid $black;
+      line-height: rem(28);
+      padding: 0 rem(6);
+      color: $black;
+      margin-left: rem(10);
+      font-size: rem(22);
+      font-weight: 800;
+    }
+    &__pic {
+      float: left;
+      position: relative;
+      width: rem(34);
+      height: rem(34);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-right: rem(12);
+      i:first-child,
+      i:last-child {
+        display: block;
+        content: '';
+        background: linear-gradient(#0385b7 60%, #a74c9c);
+        position: absolute;
+        transform: rotate(-45deg);
+        width: rem(60);
+        height: rem(60);
+        top: rem(-36);
+        left: rem(-35);
+      }
+
+      i:last-child {
+        background: linear-gradient(#a74c9c, #fe2c8d 30%);
+        top: auto;
+        left: auto;
+        bottom: rem(-36);
+        right: rem(-35);
+      }
+    }
+    &__main {
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: rem(22);
+      display: block;
+      color: $black;
+      letter-spacing: 1px;
+      padding-top: 1px;
+    }
+    &__descr {
+      font-size: rem(11);
+      text-transform: uppercase;
+      color: $gray-5;
+    }
+  }
+  &__tabs {
+    ul {
+      display: none;
+    }
+    li {
+      display: inline-block;
+      a {
+        display: inline-block;
+        margin-right: rem(20);
+        text-transform: uppercase;
+        padding: rem(5) 0 rem(3);
+        border-bottom: 1px solid $border;
+        letter-spacing: 1px;
+      }
+      &.kit__header__tabs--active {
+        a {
+          border-color: $primary;
+          color: $primary;
+        }
+      }
+    }
+    &--border {
+      border-bottom: 1px solid $border;
+      li {
+        margin-bottom: -1px;
+      }
+    }
+  }
+  &__buttons {
+    ul {
+      margin-top: rem(15);
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// dark theme
+body.kit__dark {
+  .kit__header {
+    &__container {
+      background: $dark-gray-6;
+      border-bottom: 1px solid $dark-gray-4;
+    }
+
+    &__switch {
+      background: $gray-3;
+      color: $dark-gray-3;
+      i.on {
+        display: none;
+      }
+      i.off {
+        display: inline;
+      }
+    }
+    &__color {
+      background: $gray-3;
+      color: $dark-gray-3;
+    }
+    &__logo {
+      &__main {
+        color: $white;
+      }
+      &__kit {
+        background: $white;
+        color: $black;
+      }
+      &__pro {
+        color: $white;
+        border-color: $white;
+      }
+    }
+    &__tabs {
+      a {
+        border-color: $dark-gray-4;
+        color: $dark-gray-1;
+        &:hover {
+          color: $white;
+        }
+      }
+      &--active {
+        a {
+          color: $primary;
+          border-color: $primary;
+        }
+      }
+    }
+  }
+}

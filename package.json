@@ -1,0 +1,43 @@
+{
+  "name": "cleanui-kit-pro-html",
+  "version": "2.0.0",
+  "author": "Mediatec Software http://www.mediatec.org <hello@mediatec.com>",
+  "description": "Clean UI KIT Pro Html",
+  "private": true,
+  "scripts": {
+    "start": "gulp",
+    "setup": "bower install",
+    "clean": "gulp clean",
+    "prettier": "prettier --write \"src/**/*.{js,html,scss,css}\"",
+    "stylelint": "stylelint \"src/**/*.{scss,css}\""
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "6.1.0",
+    "gulp-data": "1.3.1",
+    "gulp-flatten": "^0.4.0",
+    "gulp-ignore": "2.0.2",
+    "gulp-rename": "1.4.0",
+    "gulp-rigger": "0.5.8",
+    "gulp-rimraf": "0.2.2",
+    "gulp-sass": "4.0.2",
+    "gulp-template": "5.0.0",
+    "gulp-watch": "5.0.1",
+    "gulp-wrap": "0.15.0",
+    "mjml": "4.3.1",
+    "prettier": "1.17.0",
+    "rimraf": "2.6.3",
+    "run-sequence": "^2.2.1",
+    "stylelint": "10.0.1",
+    "stylelint-config-prettier": "5.1.0",
+    "stylelint-config-standard": "18.3.0"
+  },
+  "dependencies": {
+    "glob": "^7.1.4"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%"
+  ]
+}
