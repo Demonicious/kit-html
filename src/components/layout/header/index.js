@@ -1,15 +1,15 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // "menu" module scripts
 
-; (function ($) {
+;(function($) {
   'use strict'
-  $(function () {
+  $(function() {
     /////////////////////////////////////////////////////////////////////////////////////////
     // set active menu item on load
     var url = window.location.href
     var page = url.substr(url.lastIndexOf('/') + 1)
     var currentList = $('.kit__header__js ul')
-    currentList.each(function () {
+    currentList.each(function() {
       var currentItem = $(this).find('a[href="' + page + '"]')
       if (currentItem.length) {
         $(this)
@@ -44,14 +44,14 @@
         .parent()
         .removeClass('reset')
     }
-    $('#colorPicker').on('change', function () {
+    $('#colorPicker').on('change', function() {
       var value = $(this).val()
       setPrimaryColor(value)
       $('#resetColor')
         .parent()
         .removeClass('reset')
     })
-    $('#resetColor').on('click', function () {
+    $('#resetColor').on('click', function() {
       window.localStorage.removeItem('kit.primary')
       $('#primaryColor').remove()
       $('#resetColor')

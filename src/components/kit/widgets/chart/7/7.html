@@ -34,9 +34,9 @@
   /////////////////////////////////////////////////////////////////////////////////////////
   // "Chart Widget 7" module scripts
 
-  ; (function ($) {
+  ;(function($) {
     'use strict'
-    $(function () {
+    $(function() {
       /////////////////////////////////////////////////////////////////////////////////////////
       $('#vmap').vectorMap({
         map: 'usa_en',
@@ -49,12 +49,12 @@
         colors: {
           mo: '#2980b9',
           fl: '#27ae60',
-          or: '#8e44ad'
+          or: '#8e44ad',
         },
-        onRegionClick: function (event, code, region) {
-          event.preventDefault();
-        }
-      });
+        onRegionClick: function(event, code, region) {
+          event.preventDefault()
+        },
+      })
       /////////////////////////////////////////////////////////////////////////////////////////
     })
   })(jQuery)
