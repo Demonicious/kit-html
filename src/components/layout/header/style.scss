@@ -1,4 +1,4 @@
-@import '../../kit-core/mixins';
+@import 'src/components/mixins';
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /*  "APP" STYLES */
@@ -111,79 +111,42 @@
     align-items: center;
     flex-wrap: nowrap;
   }
-  &__logo {
-    width: auto;
+  &__logoContainer {
+    height: 64px;
     display: flex;
     align-items: center;
-    line-height: 0.9;
-    white-space: nowrap;
-    &__kit {
-      display: block;
-      height: rem(32);
-      border-radius: 6px;
-      background: $black;
-      line-height: rem(34);
-      padding: 0 rem(13);
-      color: $white;
-      margin-left: rem(10);
-      font-size: rem(22);
-      font-weight: 800;
-    }
-    &__pro {
-      display: block;
-      height: rem(32);
-      border-radius: 6px;
-      border: 3px solid $black;
-      line-height: rem(28);
-      padding: 0 rem(6);
-      color: $black;
-      margin-left: rem(10);
-      font-size: rem(22);
-      font-weight: 800;
-    }
-    &__pic {
-      float: left;
-      position: relative;
-      width: rem(34);
-      height: rem(34);
-      border-radius: 6px;
-      overflow: hidden;
-      margin-right: rem(12);
-      i:first-child,
-      i:last-child {
+    padding: 0 rem(28) 0 0;
+    .kit__header__logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: rem(24);
+      white-space: nowrap;
+      width: 100%;
+      img {
+        position: relative;
+        top: -3px;
+      }
+      &__name {
+        font-size: rem(20);
+        font-weight: 700;
+        color: $black;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 90%;
         display: block;
-        content: '';
-        background: linear-gradient(#0385b7 60%, #a74c9c);
-        position: absolute;
-        transform: rotate(-45deg);
-        width: rem(60);
-        height: rem(60);
-        top: rem(-36);
-        left: rem(-35);
       }
-
-      i:last-child {
-        background: linear-gradient(#a74c9c, #fe2c8d 30%);
-        top: auto;
-        left: auto;
-        bottom: rem(-36);
-        right: rem(-35);
+      &__descr {
+        margin-left: rem(13);
+        padding-left: rem(13);
+        height: rem(38);
+        line-height: rem(38);
+        border-left: 1px solid $gray-2;
+        font-size: rem(14);
       }
     }
-    &__main {
-      font-weight: 800;
-      text-transform: uppercase;
-      font-size: rem(22);
-      display: block;
-      color: $black;
-      letter-spacing: 1px;
-      padding-top: 1px;
-    }
-    &__descr {
-      font-size: rem(11);
-      text-transform: uppercase;
-      color: $gray-5;
-    }
+    
   }
   &__tabs {
     ul {
@@ -218,59 +181,6 @@
       margin-top: rem(15);
       li {
         display: inline-block;
-      }
-    }
-  }
-}
-
-// dark theme
-body.kit__dark {
-  .kit__header {
-    &__container {
-      background: $dark-gray-6;
-      border-bottom: 1px solid $dark-gray-4;
-    }
-
-    &__switch {
-      background: $gray-3;
-      color: $dark-gray-3;
-      i.on {
-        display: none;
-      }
-      i.off {
-        display: inline;
-      }
-    }
-    &__color {
-      background: $gray-3;
-      color: $dark-gray-3;
-    }
-    &__logo {
-      &__main {
-        color: $white;
-      }
-      &__kit {
-        background: $white;
-        color: $black;
-      }
-      &__pro {
-        color: $white;
-        border-color: $white;
-      }
-    }
-    &__tabs {
-      a {
-        border-color: $dark-gray-4;
-        color: $dark-gray-1;
-        &:hover {
-          color: $white;
-        }
-      }
-      &--active {
-        a {
-          color: $primary;
-          border-color: $primary;
-        }
       }
     }
   }

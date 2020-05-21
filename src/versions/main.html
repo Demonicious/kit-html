@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-//= head.html
+<html lang="en" data-kit-theme="default">
+@@include('src/versions/head.html')
 
 <body>
-  <div class="kit__initialLoading"></div>
-  //= ../components/layout/header/template.html
+  <div class="initialLoading"></div>
+  @@include('src/components/layout/header/template.html')
   <div class="container-fluid" style="max-width: 1440px;">
     <%= contents %>
-    //= ../components/layout/footer/template.html
+    @@include('src/components/layout/footer/template.html')
   </div>
 </body>
 

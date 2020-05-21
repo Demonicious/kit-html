@@ -1,8 +1,6 @@
 {
-  "name": "cleanui-kit-pro-html",
-  "version": "2.0.0",
-  "author": "Mediatec Software http://www.mediatec.org <hello@mediatec.com>",
-  "description": "Clean UI KIT Pro Html",
+  "name": "cleanui-kit-html",
+  "version": "2.2.0",
   "private": true,
   "scripts": {
     "start": "gulp",
@@ -13,13 +11,14 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "glob": "^7.1.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "6.1.0",
     "gulp-data": "1.3.1",
+    "gulp-file-include": "^2.1.1",
     "gulp-flatten": "^0.4.0",
     "gulp-ignore": "2.0.2",
     "gulp-rename": "1.4.0",
-    "gulp-rigger": "0.5.8",
     "gulp-rimraf": "0.2.2",
     "gulp-sass": "4.0.2",
     "gulp-template": "5.0.0",

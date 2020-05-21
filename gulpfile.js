@@ -8,9 +8,9 @@
 // CONFIGURATION
 
 const appVars = {
-  "templateName": "Clean UI KIT Pro Html",
-  "title": "Clean UI KIT Pro (Html Edition)",
-  "version": "2.0.0",
+  "templateName": "Clean UI KIT Html",
+  "title": "Clean UI KIT (Html Edition)",
+  "version": "2.2.0",
   "description": "",
 };
 
@@ -21,7 +21,7 @@ const gulp = require('gulp'),
   autoprefix = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   rename = require('gulp-rename'),
-  rigger = require('gulp-rigger'),
+  fileinclude = require('gulp-file-include'),
   ignore = require('gulp-ignore'),
   rimraf = require('gulp-rimraf'),
   browserSync = require('browser-sync').create(),
@@ -44,7 +44,7 @@ const path = {
 
     templates: 'src/components/**/**/*.html',
     img: 'src/components/**/img/**/*.*',
-    css: 'src/components/**/**/*.scss',
+    css: 'src/components/**/*.scss',
     js: 'src/components/**/**/*.js',
 
     tmpPages: './dist/versions/tmp/pages/',
@@ -111,7 +111,10 @@ function reload(cb) {
 function buildVersions() {
   return gulp.src(path.src.versionsFiles) // get pages templates
     .pipe(ignore.exclude('**/head.html')) // exclude head.html file
-    .pipe(rigger()) // include component templates to generated pages
+    .pipe(fileinclude({ // include component templates to generated pages
+      prefix: '@@',
+      basepath: '@root'
+    }))
     .pipe(gulp.dest(path.build.tmpVersions)) // copy generated pages to build folder
 }
 
@@ -122,7 +125,10 @@ function buildPages(cb) {
 
     function buildVersionPages() {
       return gulp.src(path.src.pages)
-        .pipe(rigger())
+        .pipe(fileinclude({
+          prefix: '@@',
+          basepath: '@root'
+        }))
         .pipe(rename(function (path) {
           const prefix = path.dirname;
           path.dirname = "/";
@@ -142,7 +148,14 @@ function buildPages(cb) {
     buildVersionPages.displayName = `build ${versionName} pages`
     return buildVersionPages;
   });
-  return gulp.series(gulp.parallel(...pages),
+  function removeTmp() {
+    return gulp.src(path.build.tmpVersions) // get tmp folder
+      .pipe(rimraf()); // erase tmp folder
+  }
+  return gulp.series(gulp.series(
+    ...pages,
+    removeTmp
+  ),
     function doneBuildPages(done) {
       cb();
       done();

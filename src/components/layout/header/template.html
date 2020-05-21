@@ -1,9 +1,5 @@
 <div class="kit__header__container">
   <div class="container-fluid" style="max-width: 1440px;">
-    <div class="kit__header__switch" data-toggle="tooltip" data-placement="left" title="Switch Dark / Light Theme">
-      <i class="fe fe-moon on"></i>
-      <i class="fe fe-sun off"></i>
-    </div>
     <div class="kit__header__color reset" data-toggle="tooltip" data-placement="left" title="Set Primary Color">
       <button id="resetColor">
         <i class="fe fe-x-circle"></i>
@@ -15,30 +11,21 @@
       <div class="row">
         <div class="col-xl-12">
           <div class="kit__header__topbar">
-            <a class="kit__header__logo mr-md-5 mr-auto" href="widgets-general.html">
-              <div class="kit__header__logo__pic">
-                <i></i>
-                <i></i>
+            <div class="kit__header__logoContainer">
+              <div class="kit__header__logo">
+                <img src="../../components/kit/core/img/logo.svg" class="mr-2" alt="Clean UI" />
+                <div class="kit__header__logo__name">Clean UI KIT</div>
+                <div class="kit__header__logo__descr">HTML</div>
               </div>
-              <div>
-                <span class="kit__header__logo__main">
-                  Clean UI
-                </span>
-                <span class="kit__header__logo__descr">
-                  Admin Template
-                </span>
-              </div>
-              <div class="kit__header__logo__kit">KIT</div>
-              <div class="kit__header__logo__pro">PRO</div>
-            </a>
+            </div>
             <span class="d-none d-md-block mr-3">Switch to:</span>
-            <a class="d-none d-md-block mr-3 kit__utils__link" href="https://cleanuitemplate.com/kit/react/">
+            <a class="d-none d-md-block mr-3 kit__utils__link" href="https://kit-react.cleanuitemplate.com">
               React
             </a>
-            <a class="d-none d-md-block mr-3 kit__utils__link" href="https://cleanuitemplate.com/kit/vue/">
+            <a class="d-none d-md-block mr-3 kit__utils__link" href="https://kit-vue.cleanuitemplate.com">
               Vue
             </a>
-            <a class="d-none d-md-block mr-3 kit__utils__link" href="https://cleanuitemplate.com/kit/angular/">
+            <a class="d-none d-md-block mr-3 kit__utils__link" href="https://kit-angular.cleanuitemplate.com">
               Angular
             </a>
             <a class="mr-auto d-none d-md-block kit__utils__link" href="https://docs.cleanuitemplate.com/kit-pro/"
@@ -52,7 +39,7 @@
             <div class="dropdown ml-4">
               <a href="" class="dropdown-toggle text-nowrap" data-toggle="dropdown" aria-expanded="false"
                 data-offset="5,15">
-                <img src="../../components/kit-core/img/avatars/avatar-2.png" alt="User avatar" />
+                <img src="../../components/kit/core/img/avatars/avatar-2.png" alt="User avatar" />
               </a>
               <div class="dropdown-menu dropdown-menu-right" role="menu">
                 <a class="dropdown-item" href="javascript:void(0)">
@@ -89,8 +76,8 @@
             <a href="https://themeforest.net/item/clean-ui-kit-pro-widgetdriven-admin-dashboard-template/24783640"
               target="_blank" class="kit__header__button btn btn-success">
               <i class="fe fe-shopping-cart align-middle mr-2"></i>
-              Buy Pro 19$
-              <span>17+ Apps & Premium Support</span>
+              Buy Now Pro 19$
+              <span>Dark Theme & 17+ Apps!</span>
             </a>
           </div>
           <p class="pt-xl-2">
@@ -223,6 +210,9 @@
                   <a class="btn btn-light mr-2 mb-2" href="form-plugins-autocomplete.html">Autocomplete</a>
                 </li>
                 <li>
+                  <a class="btn btn-light mr-2 mb-2" href="form-plugins-ladda.html">Ladda</a>
+                </li>
+                <li>
                   <a class="btn btn-light mr-2 mb-2" href="form-plugins-file-uploads.html">File Uploads</a>
                 </li>
                 <li>
@@ -318,8 +308,11 @@
               </ul>
             </li>
             <li>
-              <a href="advanced-invoice.html">Advanced</a>
+              <a href="advanced-form-examples.html">Advanced</a>
               <ul class="list-unstyled">
+                <li>
+                  <a class="btn btn-light mr-2 mb-2" href="advanced-form-examples.html">Form Examples</a>
+                </li>
                 <li>
                   <a class="btn btn-light mr-2 mb-2" href="advanced-invoice.html">Invoice</a>
                 </li>
