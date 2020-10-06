@@ -10,7 +10,7 @@
 const appVars = {
   "templateName": "Clean UI KIT Html",
   "title": "Clean UI KIT (Html Edition)",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "",
 };
 
